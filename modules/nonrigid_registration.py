@@ -107,29 +107,30 @@ def get_tissue_mask(f_list, sigma_thresh=1.0):
     return eq_tissue_mask, keep_idx
 
 
-def register_images(source_image, source_image_res, target_image, target_image_res, reg_models, reg_output_fp):
+def register_images(source_image, target_image, reg_models, reg_output_fp, source_image_res=0.2645833333,
+                    target_image_res=0.2645833333):
     """ Register image with multiple models and return a list of elastix transformation maps.
 
     Parameters
     ----------
     source_image : str
         file path to the image that will be aligned
-    source_image_res : float
-        pixel resolution of the source image(e.g., 0.25 um /px)
     target_image : str
         file path to the image to which source_image will be aligned
-    source_image_res : float
-        pixel resolution of the target image(e.g., 0.25 um /px)
     reg_models : list
         python list of file paths to elastix paramter files
     reg_output_fp : type
         where to place elastix registration data: transforms and iteration info
+    source_image_res : float
+        pixel resolution of the source image(e.g., 0.25 um /px)
+    target_image_res : float
+        pixel resolution of the target image(e.g., 0.25 um /px)
+
     Returns
     -------
     list
         list of elastix transforms for aligning subsequent images
     """
-
     source = sitk.ReadImage(source_image)
     target = sitk.ReadImage(target_image)
 
@@ -142,7 +143,7 @@ def register_images(source_image, source_image_res, target_image, target_image_r
     except AttributeError:
         selx = sitk.ElastixImageFilter()
 
-    # setup simple elastics object output directory and logs
+    # setup simple elastix object output directory and logs
     selx.LogToConsoleOn()
     selx.SetOutputDirectory(reg_output_fp)
 
@@ -168,25 +169,23 @@ def register_images(source_image, source_image_res, target_image, target_image_r
     return list(selx.GetTransformParameterMap())
 
 
-def transform_2D_image(source_image,
-                       source_image_res,
-                       transformation_maps,
-                       im_output_fp,
-                       write_image=False):
+def transform_2D_image(source_image, transformation_maps, im_output_fp, write_image=False,
+                       source_image_res=0.2645833333):
     """Transform 2D images with multiple models and return the transformed image
         or write the transformed image to disk as a .tif file.
     Parameters
     ----------
     source_image : str
         file path to the image that will be transformed
-    source_image_res : float
-        pixel resolution of the source image(e.g., 0.25 um /px)
     transformation_maps : list
         python list of file paths to elastix parameter files
     im_output_fp : str
         output file path
-    write_image : bool
+    write_image : bool (optional, default False)
         whether to write image or return it as python object
+    source_image_res : float (optional, default 0.2645833333)
+        pixel resolution of the source image(e.g., 0.25 um /px)
+
     Returns
     -------
     type
