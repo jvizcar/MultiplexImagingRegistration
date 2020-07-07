@@ -107,9 +107,9 @@ def get_tissue_mask(f_list, sigma_thresh=1.0):
     return eq_tissue_mask, keep_idx
 
 
-def register_2D_images(source_image, source_image_res, target_image, target_image_res, reg_models, reg_output_fp):
-    """ Register 2D images with multiple models and return a list of elastix
-        transformation maps.
+def register_images(source_image, source_image_res, target_image, target_image_res, reg_models, reg_output_fp):
+    """ Register image with multiple models and return a list of elastix transformation maps.
+
     Parameters
     ----------
     source_image : str
