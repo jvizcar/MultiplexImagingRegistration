@@ -38,9 +38,9 @@ def get_tissue_mask(f_list, sigma_thresh=1.0):
     Parameters
     ----------
     f_list : list
-        list of filepaths to images in round
+        list of filepaths to channel images in round
     sigma_thresh: float
-        values greater than this sigma threshold indicate image is noisy, and excluded from mask
+        values greater than this sigma threshold indicate channel image is noisy, and excluded from mask
 
     Return
     ------
@@ -76,11 +76,11 @@ def get_tissue_mask(f_list, sigma_thresh=1.0):
             print("skipping because too noisy", f)
             continue
 
-        #  use clean images to create mask
+        #  this image will be used to create final mask
         keep_idx.append(i)
 
         # cap outlier values (> 95th percentile) to 95th percentile value
-        max_val = np.percentile(img, 95)  ### Cap extreme values
+        max_val = np.percentile(img, 95)  # cap extreme values
         img[img > max_val] = max_val
 
         # perform Otsu's thresholding - add thresholded values to the pixels for each channel
@@ -90,9 +90,9 @@ def get_tissue_mask(f_list, sigma_thresh=1.0):
         t = filters.threshold_otsu(img[img > 0])
         tissue_mask[img > t] += img[img > t]
 
-        # not that the tissue mask is the combined signals from each channel
+        # note that the tissue mask is the combined signals from each channel
 
-    # rescale pixels that summed up beyong 255 to 255
+    # rescale pixels that summed up beyond 255 to 255
     tissue_mask = exposure.rescale_intensity(tissue_mask, out_range=(0, 255))
 
     # Perform Otsu's threshold on the final mask and return as binary mask (value either 0 or 255)
@@ -100,7 +100,7 @@ def get_tissue_mask(f_list, sigma_thresh=1.0):
     final_mask = np.zeros(tissue_mask.shape, dtype=np.uint8)
     final_mask[tissue_mask >= t] = 255
 
-    # histogram equalization
+    # histogram equalization to turn the binary final mask to the same distrubtion before thresholding
     eq_tissue_mask = exposure.equalize_hist(tissue_mask, mask=final_mask)
     eq_tissue_mask[final_mask == 0] = 0
 
