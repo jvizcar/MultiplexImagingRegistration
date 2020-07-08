@@ -5,7 +5,6 @@ import numpy as np
 import cv2
 from skimage import transform
 
-
 # KAZE features are used as the default keypoints
 FD = cv2.KAZE_create(extended=True)
 LINEAR_TRANSFORMER = transform.SimilarityTransform()
