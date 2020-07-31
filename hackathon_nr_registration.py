@@ -8,7 +8,6 @@ from modules.utils import parse_tif_dir
 from modules import nonrigid_registration as nr
 
 import SimpleITK as sitk
-from time import time
 
 # set variables
 out_dir = '/media/jc/NVME_SSD/SageBionetworks/normalBreast'  # location to save registration logs and images
