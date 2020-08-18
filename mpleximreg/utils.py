@@ -19,7 +19,6 @@ from matplotlib.patches import Circle
 plt.rcParams['axes.titlesize'] = 16
 plt.rcParams['figure.titlesize'] = 18
 
-
 # global variables
 FILE_REGEX = re.compile('R(?P<round>\d{1,2})_.*_c(?P<channel>\d)_ORG.*.tif')
 FILE_REGEX_Q = re.compile('R(?P<round>\d{1,2}(Q|))_.*_c(?P<channel>\d)_ORG.*.tif')

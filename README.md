@@ -17,6 +17,16 @@ locally as tif files. To test this on the source images, such as ome.tiff or .cz
 saved into a directory as tif files per channel in round. For code to work make sure the filenames contain this format:
 R#_....._c#_ORG.tif where R# is the round number and c# is the channel number.
 
+## Hackathon Scripts
+
+The 2020 hackathon performed rigid registration on keypoints and also did non-rigid registration using intensity signals
+using the SimpleITK Python library. The registration strategies can be recreated by running the register_datasets.py 
+script which will save the results to three csv files in the Data_Files dir (the three csv files correspond to the three
+datasets available: breast TMAs, breast cancer TMAs, and tonsil TMAs).
+
+A jupyter notebook (hackathon_results.ipynb) is provided for visualizing the results by plotting the data in the csv 
+files.
+
 ## Non-rigid registration
 ### Signal masks
 Non-rigid registration used in the hackathon, and code found here, uses signal masks to get the transform between two 
