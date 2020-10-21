@@ -154,11 +154,9 @@ def register_images(source_image, target_image, reg_models, reg_output_fp, sourc
     for idx, model in enumerate(reg_models):
         if idx == 0:
             pmap = sitk.ReadParameterFile(model)
-            pmap["WriteResultImage"] = ("false", )
             selx.SetParameterMap(pmap)
         else:
             pmap = sitk.ReadParameterFile(model)
-            pmap["WriteResultImage"] = ("false", )
             selx.AddParameterMap(pmap)
 
     selx.LogToFileOn()
@@ -224,7 +222,7 @@ def transform_2D_image(source_image, transformation_maps, im_output_fp, write_im
 
             transformix.AddTransformParameterMap(tmap)
 
-    #take care for RGB images
+    # take care for RGB images
     pixelID = image.GetPixelID()
 
     transformix.LogToConsoleOn()
