@@ -6,3 +6,7 @@ notebooks/.ipynb_checkpoints/
 modules/__pycache__/
 
 .ipynb_checkpoints/
+
+.temp/
+
+mpleximreg/__pycache__/

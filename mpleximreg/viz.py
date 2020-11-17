@@ -8,6 +8,7 @@ from imageio import imread
 import matplotlib.pyplot as plt
 import numpy as np
 from ipywidgets import interact, Dropdown, IntSlider, fixed
+import seaborn as sns
 
 
 def interact_tif_dirs(tiff_dirs):
@@ -68,3 +69,84 @@ def visualize_tif_dir(tif_dir, round1, round2, channel, threshold1=5, threshold2
 
     if multi == 'Both':
         print('Green - both images     Red - first image only     Blue - second image only')
+
+
+def plot_swarm_plots(df, groupcol, scorecol, order=None, figsize=(10, 10), hue=None):
+    """Plot the swarm box plots from the hackathon results (errors).
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        the dataframe with the data to plot
+    groupcol : str
+        the column to use for separating the rows / entries into groups
+    scorecol : str
+        the column used to plot the y-axis (contniuous variable)
+    order : list (default: None)
+        the groups to plot and in the order to plot them, otherwise all possible groups are plotted in the order they
+        appear in the column
+    figsize : tuple (default: (10, 10))
+        the figure size
+    hue : str (default: None)
+        the column used to group categories by, the second grouping column, if None then a second grouping won't be used
+
+    Return
+    ------
+    fig : matplotlib.fig
+        the figure canvas of the plot
+    ax : matplotlib.ax
+        the axis of the figure
+
+    """
+    fig, ax = plt.subplots(figsize=figsize)
+
+    if order is None:
+        order = list(set(df[groupcol].tolist()))
+
+    sns.swarmplot(x=groupcol, y=scorecol, data=df, ax=ax, order=order, hue=hue, size=7)
+    for tick in ax.get_xticklabels():
+        tick.set_rotation(45)
+
+    return fig, ax
+
+
+def pretty_swarm_plot(df, order=('Unregistered', 'Rigid Registration with DAPI', 'Nonrigid Registration'),
+                      save_path=None, hue='Dataset', figsize=(10, 10), ylims=None):
+    """A custom wrapper function around plot_swarm_plot custom to my project.
+
+    """
+    # plot for TRE
+    fig, ax = plot_swarm_plots(df, 'Registration Method', 'TRE', order=order, hue=hue, figsize=figsize)
+    ax.set_xlabel('')
+    ax.set_ylabel('TRE', fontsize=18)
+    ax.set_title('TRE for hackathon recreation', fontsize=20, fontweight='bold')
+    ax.set_xticklabels(order, fontsize=16)
+
+    if ylims is not None:
+        ax.set_ylim(ylims[0])
+
+    if hue is not None:
+        ax.legend(fontsize=14)
+    plt.tight_layout()
+
+    if save_path is not None:
+        fig.savefig(save_path + '_TRE.png', dpi=300)
+    plt.show()
+
+    # plot for the error in micrometers
+    fig, ax = plot_swarm_plots(df, 'Registration Method', 'Mean Error (um)', order=order, hue=hue, figsize=figsize)
+    ax.set_xlabel('')
+    ax.set_ylabel('Mean error distance (\u03bcm)', fontsize=18)
+    ax.set_title('Mean error for hackathon recreation', fontsize=20, fontweight='bold')
+    ax.set_xticklabels(order, fontsize=16)
+
+    if ylims is not None:
+        ax.set_ylim(ylims[1])
+
+    if hue is not None:
+        ax.legend(fontsize=14)
+    plt.tight_layout()
+
+    if save_path is not None:
+        fig.savefig(save_path + '_Error.png', dpi=300)
+    plt.show()

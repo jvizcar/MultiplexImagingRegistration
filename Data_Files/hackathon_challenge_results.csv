@@ -1,0 +1,71 @@
+Registration Method	Target Round	Moving Round	Registration Channel	Dataset	TRE	Mean Error (um)
+Linear; Keypoint (OHSU; DAPI)	1	2	DAPI	BrCa (OHSU)	0.000105451	n/a
+Linear; Keypoint (OHSU; DAPI)	1	3	DAPI	BrCa (OHSU)	0.000123375	n/a
+Linear; Keypoint (OHSU; DAPI)	1	4	DAPI	BrCa (OHSU)	0.000112284	n/a
+Linear; Keypoint (OHSU; DAPI)	1	5	DAPI	BrCa (OHSU)	0.00010664299999999999	n/a
+Linear; Keypoint (OHSU; DAPI)	1	6	DAPI	BrCa (OHSU)	0.000105893	n/a
+Linear; Keypoint (OHSU; DAPI)	1	7	DAPI	BrCa (OHSU)	0.000107044	n/a
+Linear; Keypoint (OHSU; DAPI)	1	8	DAPI	BrCa (OHSU)	0.000129679	n/a
+Linear; Keypoint (OHSU; DAPI)	1	9	DAPI	BrCa (OHSU)	0.00010114	n/a
+Linear; Keypoint (OHSU; DAPI)	1	10	DAPI	BrCa (OHSU)	0.000112287	n/a
+Linear; Keypoint (OHSU; DAPI)	1	11	DAPI	BrCa (OHSU)	8.690000000000001e-05	n/a
+Non-linear; Intensity (AF)	1	2	AF	BrCa (OHSU)	0.000155554	n/a
+Non-linear; Intensity (AF)	1	3	AF	BrCa (OHSU)	0.000273645	n/a
+Non-linear; Intensity (AF)	1	4	AF	BrCa (OHSU)	0.000340161	n/a
+Non-linear; Intensity (AF)	1	5	AF	BrCa (OHSU)	0.000165012	n/a
+Non-linear; Intensity (AF)	1	6	AF	BrCa (OHSU)	0.000176938	n/a
+Non-linear; Intensity (AF)	1	7	AF	BrCa (OHSU)	0.000210423	n/a
+Non-linear; Intensity (AF)	1	8	AF	BrCa (OHSU)	0.000170692	n/a
+Non-linear; Intensity (AF)	1	9	AF	BrCa (OHSU)	0.000295855	n/a
+Non-linear; Intensity (AF)	1	10	AF	BrCa (OHSU)	0.00013967799999999999	n/a
+Non-linear; Intensity (AF)	1	11	AF	BrCa (OHSU)	0.000161492	n/a
+Linear; Keypoint (DAPI)	1	10	DAPI	BrCa (OHSU)	0.00010999220035531	n/a
+Linear; Keypoint (DAPI)	1	6	DAPI	BrCa (OHSU)	9.23847690314601e-05	n/a
+Linear; Keypoint (DAPI)	1	2	DAPI	BrCa (OHSU)	0.000106778725964035	n/a
+Linear; Keypoint (DAPI)	1	11	DAPI	BrCa (OHSU)	8.079628905724609e-05	n/a
+Linear; Keypoint (DAPI)	1	5	DAPI	BrCa (OHSU)	0.000103062375122889	n/a
+Linear; Keypoint (DAPI)	1	7	DAPI	BrCa (OHSU)	0.000107880683767037	n/a
+Linear; Keypoint (DAPI)	1	9	DAPI	BrCa (OHSU)	0.000109971113437592	n/a
+Linear; Keypoint (DAPI)	1	3	DAPI	BrCa (OHSU)	0.000122277591564218	n/a
+Linear; Keypoint (DAPI)	1	4	DAPI	BrCa (OHSU)	0.00011548682814196598	n/a
+Linear; Keypoint (DAPI)	1	8	DAPI	BrCa (OHSU)	0.00012294665219275602	n/a
+Unaligned (DAPI)	1	10	DAPI	BrCa (OHSU)	0.0344250649213791	n/a
+Unaligned (DAPI)	1	6	DAPI	BrCa (OHSU)	0.14454099535942097	n/a
+Unaligned (DAPI)	1	2	DAPI	BrCa (OHSU)	0.0258813537657261	n/a
+Unaligned (DAPI)	1	11	DAPI	BrCa (OHSU)	0.014644630253315	n/a
+Unaligned (DAPI)	1	5	DAPI	BrCa (OHSU)	0.0561068654060364	n/a
+Unaligned (DAPI)	1	7	DAPI	BrCa (OHSU)	0.00487894285470247	n/a
+Unaligned (DAPI)	1	9	DAPI	BrCa (OHSU)	0.016787139698863	n/a
+Unaligned (DAPI)	1	3	DAPI	BrCa (OHSU)	0.0236086454242468	n/a
+Unaligned (DAPI)	1	4	DAPI	BrCa (OHSU)	0.0260964278131723	n/a
+Unaligned (DAPI)	1	8	DAPI	BrCa (OHSU)	0.0394987985491753	n/a
+Linear; Keypoint (AF)	2	4	AF	BrCa (OHSU)	0.0431934051289466	n/a
+Linear; Keypoint (AF)	2	9	AF	BrCa (OHSU)	0.0386327456293761	n/a
+Linear; Keypoint (AF)	2	6	AF	BrCa (OHSU)		n/a
+Linear; Keypoint (AF)	2	7	AF	BrCa (OHSU)	0.0220471658692167	n/a
+Linear; Keypoint (AF)	2	3	AF	BrCa (OHSU)	0.050387045880297	n/a
+Linear; Keypoint (AF)	2	11	AF	BrCa (OHSU)	0.0482560560959224	n/a
+Linear; Keypoint (AF)	2	2	AF	BrCa (OHSU)	0.0284004271755053	n/a
+Linear; Keypoint (AF)	2	8	AF	BrCa (OHSU)		n/a
+Linear; Keypoint (AF)	2	5	AF	BrCa (OHSU)	0.053029646376608	n/a
+Linear; Keypoint (AF)	2	10	AF	BrCa (OHSU)	6.24441513214984e-05	n/a
+Unaligned (AF)	2	4	AF	BrCa (OHSU)	0.2386314868927	n/a
+Unaligned (AF)	2	9	AF	BrCa (OHSU)	0.15885189175605802	n/a
+Unaligned (AF)	2	6	AF	BrCa (OHSU)		n/a
+Unaligned (AF)	2	7	AF	BrCa (OHSU)	0.368453770875931	n/a
+Unaligned (AF)	2	3	AF	BrCa (OHSU)	0.20664322376251198	n/a
+Unaligned (AF)	2	11	AF	BrCa (OHSU)	0.19054810702800798	n/a
+Unaligned (AF)	2	2	AF	BrCa (OHSU)	0.0470409765839577	n/a
+Unaligned (AF)	2	8	AF	BrCa (OHSU)		n/a
+Unaligned (AF)	2	5	AF	BrCa (OHSU)	0.14110469818115198	n/a
+Unaligned (AF)	2	10	AF	BrCa (OHSU)	0.0344819463789463	n/a
+Non-linear; Intensity (AF).	1	2	AF	Tonsil (OHSU)	0.000185	n/a
+Non-linear; Intensity (AF).	1	3	AF	Tonsil (OHSU)	0.000168	n/a
+Non-linear; Intensity (AF).	1	4	AF	Tonsil (OHSU)	0.00021899999999999998	n/a
+Non-linear; Intensity (AF).	1	5	AF	Tonsil (OHSU)	0.000161	n/a
+Non-linear; Intensity (AF).	1	6	AF	Tonsil (OHSU)	0.00020800000000000001	n/a
+Non-linear; Intensity (AF).	1	7	AF	Tonsil (OHSU)	0.00020899999999999998	n/a
+Non-linear; Intensity (AF).	1	8	AF	Tonsil (OHSU)	0.000195	n/a
+Non-linear; Intensity (AF).	1	9	AF	Tonsil (OHSU)	0.000205	n/a
+Non-linear; Intensity (AF).	1	10	AF	Tonsil (OHSU)	0.000251	n/a
+Non-linear; Intensity (AF).	1	11	AF	Tonsil (OHSU)	0.000174	n/a

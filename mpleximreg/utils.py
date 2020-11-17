@@ -8,6 +8,7 @@ List of functions:
 """
 import re
 import numpy as np
+from pandas import DataFrame
 
 from os.path import join
 from os import listdir
@@ -50,6 +51,41 @@ def normalize_image(im):
     normalized_im = (normalized_im.reshape(im.shape) * 255).astype(np.uint8)
 
     return normalized_im
+
+
+def create_tif_dir_csv(data_dir, save_path=None):
+    """From a data directory with tif images named in the OHSU CycIF standard create a csv file that contains all the
+    metadata (round, channel, filepath) for those images.
+
+    Parameters
+    ----------
+    data_dir : str
+        the directory with the images
+    save_path : str (default: None)
+        the filepath to save the csv to
+
+    Return
+    ------
+    df : pandas.DataFrame
+        dataframe with the information about each image
+
+    """
+    im_dict = parse_tif_dir(data_dir, quench=True)
+
+    data = {'im_filepath': [], 'round': [], 'channel': []}
+
+    for _round, channel_dict in im_dict.items():
+        for channel, im_filepath in channel_dict.items():
+            data['im_filepath'].append(im_filepath)
+            data['round'].append(_round)
+            data['channel'].append(channel)
+
+    df = DataFrame(data)
+
+    if save_path is not None:
+        df.to_csv(save_path, index=False)
+
+    return df
 
 
 def parse_tif_dir(data_dir, quench=False):

@@ -1,0 +1,11 @@
+Registration Method,Target Round,Moving Round,Registration Channel,Dataset,TRE,Mean Error (um)
+Nonrigid Registration,1,R5,2,Tonsil (OHSU),0.000707690429408,5.76125764846802
+Nonrigid Registration,1,R7,2,Tonsil (OHSU),0.001007065875456,8.19845199584961
+Nonrigid Registration,1,R2,2,Tonsil (OHSU),0.001057872897945,8.61206817626953
+Nonrigid Registration,1,R6,2,Tonsil (OHSU),0.000331396789989,2.69787812232971
+Nonrigid Registration,1,R10,2,Tonsil (OHSU),0.000216073356569,1.75903809070587
+Nonrigid Registration,1,R11,2,Tonsil (OHSU),0.000325838656863,2.65262961387634
+Nonrigid Registration,1,R8,2,Tonsil (OHSU),0.000250847399002,2.04213094711304
+Nonrigid Registration,1,R9,2,Tonsil (OHSU),0.000366621010471,2.98463535308838
+Nonrigid Registration,1,R4,2,Tonsil (OHSU),0.002180478768423,17.7511215209961
+Nonrigid Registration,1,R3,2,Tonsil (OHSU),0.000261037872406,2.12509083747864

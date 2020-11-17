@@ -1,0 +1,12 @@
+Registration Method,Target Round,Moving Round,Registration Channel,Dataset,TRE,Mean Error (um)
+Nonrigid registration - Background (Cropped),0,R9,2,BRCA (OHSU),0.0002610376395750791,1.8508323431015015
+Nonrigid registration - Background (Cropped),0,R2,2,BRCA (OHSU),0.0002695679140742868,1.9113142490386963
+Nonrigid registration - Background (Cropped),0,R4,2,BRCA (OHSU),0.00022173108300194144,1.5721375942230225
+Nonrigid registration - Background (Cropped),0,R5,2,BRCA (OHSU),0.00017713654960971326,1.2559492588043213
+Nonrigid registration - Background (Cropped),0,R7,2,BRCA (OHSU),0.00021956406999379396,1.5567727088928223
+Nonrigid registration - Background (Cropped),0,R11,2,BRCA (OHSU),0.00029852864099666476,2.116654396057129
+Nonrigid registration - Background (Cropped),0,R8,2,BRCA (OHSU),0.0002298528706887737,1.629723310470581
+Nonrigid registration - Background (Cropped),0,R6,2,BRCA (OHSU),0.00020008299907203764,1.418646216392517
+Nonrigid registration - Background (Cropped),0,R1,2,BRCA (OHSU),0.00018742968677543104,1.3289304971694946
+Nonrigid registration - Background (Cropped),0,R3,2,BRCA (OHSU),0.00017568170733284205,1.2456340789794922
+Nonrigid registration - Background (Cropped),0,R10,2,BRCA (OHSU),0.00025651860050857067,1.8187910318374634
